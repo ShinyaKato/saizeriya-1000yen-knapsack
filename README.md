@@ -18,6 +18,28 @@ curl https://raw.githubusercontent.com/marushosummers/Saizeriya_1000yen/master/s
 python3 convert.py > saizeriya.txt
 ```
 
+得られたデータは1行目に全データの件数、それ以降の各行に以下の7つの情報がスペース区切りで含まれる。
+
+* ID
+* メニュー名 (文字列)
+* カテゴリ (文字列)
+* 種類 (文字列)
+* 価格 (円)
+* カロリー (kcal)
+* 塩分 (g)
+
+```bash
+head -n 5 saizeriya.txt
+```
+
+```
+114
+1 彩りガーデンサラダ sidedish salad 299 130 1.1
+2 小エビのサラダ sidedish salad 349 115 1.3
+3 やわらかチキンのサラダ sidedish salad 299 134 1.2
+4 わかめサラダ sidedish salad 299 92 2.1
+```
+
 
 ## 最適な組み合わせを求める
 
