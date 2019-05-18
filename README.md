@@ -3,7 +3,7 @@
 「サイゼリヤで1000円あれば最大何kcal摂れるのか」を動的計画法で解いてみた
 
 
-## メニューデータの取得
+## メニューデータの取得と変換
 
 「サイゼリヤ1000円ガチャ」さんの GitHub リポジトリからデータをお借りする。
 https://github.com/marushosummers/Saizeriya_1000yen
@@ -12,21 +12,21 @@ https://github.com/marushosummers/Saizeriya_1000yen
 curl https://raw.githubusercontent.com/marushosummers/Saizeriya_1000yen/master/sensai/saizeriya.db > saizeriya.db
 ```
 
-取得したデータは sqlite3 のデータベースファイル(？)のようなのでテキストファイルに変換する。
+取得したデータは sqlite3 のデータベース(？)のようなので扱いやすいようにテキストファイルに変換する。
 
 ```bash
 python3 convert.py > saizeriya.txt
 ```
 
-得られたデータは1行目に全データの件数、それ以降の各行に以下の7つの情報がスペース区切りで含まれる。
+得られたテキストファイルには1行目に全データの件数、それ以降の各行に以下の7つの情報がスペース区切りで含まれる。
 
 * ID
-* メニュー名 (文字列)
+* メニュー名
 * カテゴリ (文字列)
 * 種類 (文字列)
-* 価格 (円)
-* カロリー (kcal)
-* 塩分 (g)
+* 価格 \[円\]
+* カロリー \[kcal\]
+* 塩分 \[g\]
 
 ```bash
 head -n 5 saizeriya.txt
@@ -43,23 +43,16 @@ head -n 5 saizeriya.txt
 
 ## 最適な組み合わせを求める
 
-同じメニューは1度しか注文できないという条件の場合:
+### 同じメニューは1度しか注文できないという条件の場合
+
+コンパイル & 実行:
 
 ```bash
 g++ solve.cpp -o solve
 ./solve < saizeriya.txt
 ```
 
-同じメニューを複数回注文できるという条件の場合:
-
-```bash
-g++ solve_duplicate.cpp -o solve_duplicate
-./solve_duplicate < saizeriya.txt
-```
-
-## 結果
-
-同じメニューは1度しか注文できないという条件の場合:
+結果:
 
 ```
 ポテトのグリル: 199円, 366 kcal
@@ -68,7 +61,16 @@ g++ solve_duplicate.cpp -o solve_duplicate
 合計: 992円, 1940 kcal
 ```
 
-同じメニューを複数回注文できるという条件の場合:
+### 同じメニューを複数回注文できるという条件の場合
+
+コンパイル & 実行:
+
+```bash
+g++ solve_duplicate.cpp -o solve_duplicate
+./solve_duplicate < saizeriya.txt
+```
+
+結果:
 
 ```
 フォッカチオ: 119円, 214 kcal
