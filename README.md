@@ -35,7 +35,7 @@ g++ solve_duplicate.cpp -o solve_duplicate
 ./solve_duplicate < saizeriya.txt
 ```
 
-### 結果
+## 結果
 
 同じメニューは1度しか注文できないという条件の場合:
 
@@ -56,3 +56,11 @@ g++ solve_duplicate.cpp -o solve_duplicate
 ラージライス: 219円, 454 kcal
 合計: 995円, 2030 kcal
 ```
+
+
+## 関連記事
+
+[サイゼリヤ1000円ガチャをつくってみた(Heroku + Flask + LINEbot) - Qiita](https://qiita.com/marusho_summers/items/a2d3681fac863734ec8a)
+[「サイゼリヤで1000円あれば最大何kcal摂れるのか」を量子アニーリング計算(Wildqat)で解いてみた。 - Qiita](https://qiita.com/hodaka0714/items/cf44b4ece992a39b5be4#_reference-bc420f6e5fbf164bf9a8)
+[「サイゼリヤで1000円あれば最大何kcal摂れるのか」をSMTソルバー(Z3)で解いてみた。 - Qiita](https://qiita.com/tanakh/items/a1fb13f78e0576415de3#_reference-db9f04e4502c2f29e690)
+[「サイゼリヤで1000円あれば最大何kcal摂れるのか」を整数計画法ソルバー(PuLP)で解いてみた。 - Qiita](https://qiita.com/YSRKEN/items/dfc8604eb8598e5e9076#_reference-402a3afaa23678a3d78c)
