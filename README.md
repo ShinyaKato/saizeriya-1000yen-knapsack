@@ -94,7 +94,7 @@ g++ solve.cpp -D BUDGET=10000 -D DUPLICATE=false -o solve
 
 結果:
 
-```bash
+```
 予算 = 10000円
 * ポテトのグリル: 199円, 366 kcal
 * フォッカチオ: 119円, 214 kcal
