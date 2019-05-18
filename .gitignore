@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+solve
+solve_duplicate
+
+# Input Data
+saizeriya.db
+saizeriya.txt
