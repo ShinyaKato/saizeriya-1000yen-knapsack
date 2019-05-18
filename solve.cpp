@@ -72,9 +72,9 @@ int main(void) {
   }
   reverse(selected.begin(), selected.end());
 
-  cout << "予算 = " << BUDGET << endl;
+  cout << "予算 = " << BUDGET << "円" << endl;
   for (int i : selected) {
-    cout << name[i] << ": " << price[i] << "円, " << calorie[i] << " kcal" << endl;
+    cout << "* " << name[i] << ": " << price[i] << "円, " << calorie[i] << " kcal" << endl;
   }
   cout << "合計: " << best_price << "円, " << best_calorie << " kcal" << endl;
 }
